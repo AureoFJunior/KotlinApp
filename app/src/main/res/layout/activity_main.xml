@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/background_gradient">
+
+        <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+
+
+            <ImageView
+                    android:id="@+id/imgIcon"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:src="@mipmap/icon_round"/>
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ionia: Resistence"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="40dp"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="gravity"
+                    android:gravity="center"
+                    android:id="@+id/toolbar_title"/>
+    </LinearLayout>
+
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:padding="0dp"
+                android:orientation="vertical"
+
+                android:gravity="top|center_horizontal">
+            <TextView
+                    android:id="@+id/labelUsu"
+                    android:text="Username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:padding="10dp"/>
+
+
+
+            <EditText
+                    android:id="@+id/txtLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:padding="8dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+
+            <TextView
+                    android:id="@+id/labelPassw"
+                    android:text="Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:padding="8dp"
+                    />
+
+            <EditText
+                    android:id="@+id/txtPassw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:padding="8dp"
+                    android:singleLine="true"/>
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="100"
+                        android:orientation="horizontal">
+
+                    <Button
+                            android:id="@+id/buttonSubtract"
+                            android:layout_width="0dp"
+                            android:layout_weight="47"
+                            android:layout_height="wrap_content"
+                            android:text="Cadastrar"
+                            android:background="@drawable/button_shape"
+                            app:shapeAppearanceOverlay="@drawable/button_shape"/>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="6"/>
+                    <Button
+                            android:id="@+id/buttonLog"
+                            android:layout_width="0dp"
+                            android:layout_weight="47"
+                            android:layout_height="wrap_content"
+                            android:text="Entrar"
+                            android:background="@drawable/button_shape"
+                            app:shapeAppearanceOverlay="@drawable/button_shape"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+
+
+
+                    android:id="@+id/labelLink"
+                    android:text="Esqueci minha senha"
+                    android:autoLink="web"
+                    android:linksClickable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="150dp"
+                    android:layout_marginBottom="4dp"
+                    android:padding="8dp"
+            />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
