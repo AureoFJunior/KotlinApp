@@ -23,23 +23,25 @@ import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+
+
+
 
         var usuario = intent.extras?.getParcelable<userClass>("usuario")!!
 
 
 
-        setContentView(R.layout.activity_second)
 
+        setContentView(R.layout.activity_second)
         funteste(usuario)
     }
+
+
 
     fun funteste(user: userClass){
 
@@ -51,21 +53,23 @@ class SecondActivity : AppCompatActivity() {
             color = IconicsColor.colorInt(Color.RED)
         }
 
-        val item1 = PrimaryDrawerItem().withIdentifier(1).withName("Bem-vindo\n" + user).withIcon(icon)
+        var nome1 = "Bem-vindo " + user.Username
+        var nome2 = "Lista de animes"
 
-        val item2 = SecondaryDrawerItem().withIdentifier(2).withName("SubMenu")
+
+        val item1 = PrimaryDrawerItem().withIdentifier(1).withName(nome1).withIcon(icon)
+
+        val item2 = SecondaryDrawerItem().withIdentifier(2).withName(nome2)
 
 
-        val teste = PrimaryDrawerItem().apply {
-            identifier = 1
-            name = StringHolder("Teste")
-        }
+
 
         slider.itemAdapter.add(
             item1,
             DividerDrawerItem(),
             item2,
-            SecondaryDrawerItem().withName("Maracuja")
+            SecondaryDrawerItem().withName(nome2)
+
 
         )
 

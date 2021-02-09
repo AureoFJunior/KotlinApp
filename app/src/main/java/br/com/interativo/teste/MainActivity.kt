@@ -95,7 +95,9 @@ class MainActivity : AppCompatActivity() {
         val ex = Bundle().apply {
             putParcelable("usuario", user)
         }
-        this@MainActivity.startActivity(aux, ex)
+        aux.putExtra("usuario", user)
+
+        this@MainActivity.startActivity(aux)
 
     }
 
