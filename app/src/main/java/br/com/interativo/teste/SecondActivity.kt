@@ -1,10 +1,17 @@
 package br.com.interativo.teste
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Toast
 import br.com.interativo.teste.databinding.ActivityMainBinding
+import com.github.florent37.runtimepermission.RuntimePermission.askPermission
+import com.github.florent37.runtimepermission.kotlin.askPermission
 import com.mikepenz.iconics.IconicsColor
 import com.mikepenz.iconics.IconicsDrawable
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
@@ -23,13 +30,20 @@ import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
 
-
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
 
+        askPermission(){
+            Toast.makeText(this@SecondActivity, "SAFE!", Toast.LENGTH_SHORT).show()
+        }.onDeclined { e ->
+            Toast.makeText(this@SecondActivity, "ACEITE!", Toast.LENGTH_SHORT).show()
 
-
+            this@SecondActivity.finish()
+        }
 
 
         var usuario = intent.extras?.getParcelable<userClass>("usuario")!!
@@ -39,6 +53,13 @@ class SecondActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_second)
         funteste(usuario)
+
+        fab_next_information.setOnClickListener(){
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(cameraIntent, 1)
+        }
+
+
     }
 
 
@@ -61,22 +82,18 @@ class SecondActivity : AppCompatActivity() {
 
         val item2 = SecondaryDrawerItem().withIdentifier(2).withName(nome2)
 
-
-
-
         slider.itemAdapter.add(
             item1,
             DividerDrawerItem(),
             item2,
-            SecondaryDrawerItem().withName(nome2)
+            SecondaryDrawerItem().withName("Lista de Séries")
 
 
         )
 
 
-        slider.onDrawerItemClickListener = { v, item1, position ->
+        slider.onDrawerItemClickListener = { v, item2, position ->
             //
-
 
             false
         }
