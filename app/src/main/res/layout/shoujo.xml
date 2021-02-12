@@ -3,13 +3,11 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".Shounen">
-
-
+             tools:context=".Shoujo">
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Shounen Fragment"
+            android:text="Shoujo Fragment"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="bold" />

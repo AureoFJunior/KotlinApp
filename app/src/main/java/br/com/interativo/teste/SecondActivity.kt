@@ -2,6 +2,7 @@ package br.com.interativo.teste
 
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -94,7 +95,8 @@ class SecondActivity : AppCompatActivity() {
 
         slider.onDrawerItemClickListener = { v, item2, position ->
             //
-
+            val intent = Intent(this@SecondActivity, ThirdActivity::class.java)
+            startActivity(intent)
             false
         }
 

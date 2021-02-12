@@ -15,7 +15,7 @@ internal class MyAdapter(
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                Shonen()
+                Shounen()
             }
             1 -> {
                 Shoujo()
